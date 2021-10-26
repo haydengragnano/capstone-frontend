@@ -3,8 +3,6 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/about">About</router-link>
-      |
       <router-link to="/signup">Signup</router-link>
       |
       <router-link to="/login">Login</router-link>
@@ -16,6 +14,8 @@
       <router-link to="/user/edit">user update</router-link>
       |
       <router-link to="/games">all games</router-link>
+      |
+      <router-link to="/games/show">show games</router-link>
     </div>
     <router-view />
   </div>
