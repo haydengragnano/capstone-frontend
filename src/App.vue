@@ -9,9 +9,9 @@
       |
       <router-link to="/logout">Logout</router-link>
       |
-      <router-link to="/user/show">user show</router-link>
+      <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
       |
-      <router-link to="/user/edit">user update</router-link>
+      <router-link to="/users/edit">users update</router-link>
       |
       <router-link to="/games">all games</router-link>
       |
@@ -43,3 +43,21 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {
+      flashMessage: "",
+    };
+  },
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>

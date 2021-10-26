@@ -3,12 +3,10 @@
     <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link>
     |
     <router-link to="/games">Back to all games</router-link>
-    <div v-for="user in users" v-bind:key="user.id">
-      <!-- <img v-bind:src="user.image_url" v-bind:alt="user.handle" /> -->
-      <p>{{ user.handle }}</p>
-      <p>bio:{{ user.bio }}</p>
-      <p>game of choice:{{ user.game_id }}</p>
-    </div>
+    <!-- <img v-bind:src="user.image_url" v-bind:alt="user.handle" /> -->
+    <p>{{ user.handle }}</p>
+    <p>bio:{{ user.bio }}</p>
+    <p>game of choice:{{ user.game_id }}</p>
   </div>
 </template>
 
@@ -21,8 +19,8 @@ export default {
     };
   },
   created: function () {
-    axios.get("/user/:id").then((response) => {
-      console.log(response.data);
+    axios.get(`/users/${this.$route.params.id}`).then((response) => {
+      console.log("User object", response.data);
       this.user = response.data;
     });
   },
