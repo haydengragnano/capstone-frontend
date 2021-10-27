@@ -11,11 +11,7 @@
       |
       <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
       |
-      <router-link to="/users/edit">users update</router-link>
-      |
       <router-link to="/games">all games</router-link>
-      |
-      <router-link to="/games/show">show games</router-link>
     </div>
     <router-view />
   </div>

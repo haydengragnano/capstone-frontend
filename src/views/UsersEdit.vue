@@ -5,13 +5,14 @@
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      Name:
+      <label>handle:</label>
       <input type="text" v-model="user.handle" />
-      handle:
+      <label>image:</label>
       <input type="text" v-model="user.image_url" />
-      image:
+      <label>bio</label>
       <input type="text" v-model="user.bio" />
-      bio
+      <label>game_id:</label>
+      <input type="text" v-model="user.game_id" />
 
       <input type="submit" value="Update" />
     </form>

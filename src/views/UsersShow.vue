@@ -3,10 +3,16 @@
     <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link>
     |
     <router-link to="/games">Back to all games</router-link>
-    <!-- <img v-bind:src="user.image_url" v-bind:alt="user.handle" /> -->
-    <p>{{ user.handle }}</p>
+    <br />
+    <h1>{{ user.handle }}</h1>
+    <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
     <p>bio:{{ user.bio }}</p>
-    <p>game of choice:{{ user.game_id }}</p>
+    <p>
+      game of choice: {{ user.game.title }}
+      <br />
+      <!-- {{ user.game.image_url }} -->
+      <img v-bind:src="user.game.image_url" />
+    </p>
   </div>
 </template>
 
