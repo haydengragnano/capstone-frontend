@@ -1,18 +1,23 @@
 <template>
   <div class="users-show">
-    <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link>
-    |
+    <span v-if="verifyUser()">
+      <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link>
+      |
+    </span>
+
     <router-link to="/games">Back to all games</router-link>
     <br />
     <h1>{{ user.handle }}</h1>
     <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
     <p>bio:{{ user.bio }}</p>
-    <p>
-      game of choice: {{ user.game.title }}
-      <br />
-      <!-- {{ user.game.image_url }} -->
-      <img v-bind:src="user.game.image_url" />
-    </p>
+    <!-- <div v-for="game in user.games" v-bind:key="game.id"> -->
+    <p>game of choice: {{ user.game.title }}</p>
+    <br />
+    <router-link to="/games/"><img :src="user.game.image_url" /></router-link>
+    <!-- </div> -->
+    <div v-for="tag in user.tags" v-bind:key="tag.id">
+      <p>{{ tag.name }}</p>
+    </div>
   </div>
 </template>
 
@@ -25,11 +30,23 @@ export default {
     };
   },
   created: function () {
-    axios.get(`/users/${this.$route.params.id}`).then((response) => {
-      console.log("User object", response.data);
-      this.user = response.data;
-    });
+    this.showUser();
   },
-  methods: {},
+  methods: {
+    showUser: function () {
+      axios.get(`/users/${this.$route.params.id}`).then((response) => {
+        console.log("User object", response.data);
+        this.user = response.data;
+      });
+    },
+    verifyUser: function () {
+      if (this.$route.params.id === this.userID()) {
+        return true;
+      }
+    },
+    userID: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
 };
 </script>

@@ -11,9 +11,19 @@
       <input type="text" v-model="user.image_url" />
       <label>bio</label>
       <input type="text" v-model="user.bio" />
-      <label>game_id:</label>
+      <label>game</label>
       <input type="text" v-model="user.game_id" />
+      <!-- <label>tags</label>
+      <input type="text" v-model="user.tag_id" /> -->
+      <div class="form-group">
+        <!-- <div v-for="tags in tags" v-bind:key="tags.id">
+          <label for="tags.name">{{ tags.name }}</label>
+          <input type="checkbox" id="tags.name" value="tags.name" />
 
+          <br />
+          <span>Checked tags: {{ checkedNames }}</span>
+        </div> -->
+      </div>
       <input type="submit" value="Update" />
     </form>
   </div>
@@ -26,6 +36,7 @@ export default {
     return {
       user: {},
       errors: [],
+      tags: [],
     };
   },
   created: function () {
