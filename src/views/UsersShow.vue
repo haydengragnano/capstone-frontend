@@ -8,6 +8,10 @@
     <router-link to="/games">Back to all games</router-link>
     <br />
     <h1>{{ user.handle }}</h1>
+    <a :href="`${user.stream_url}`" target="_blank">
+      <h2>{{ user.stream_url }}</h2>
+    </a>
+    <br />
     <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
     <p>bio:{{ user.bio }}</p>
     <!-- <div v-for="game in user.games" v-bind:key="game.id"> -->

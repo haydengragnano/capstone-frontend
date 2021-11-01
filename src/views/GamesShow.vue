@@ -4,7 +4,11 @@
     <img v-bind:src="game.image_url" v-bind:alt="game.title" />
     <p>title: {{ game.title }}</p>
     <div v-for="user in game.users" v-bind:key="user.id">
+      <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
       <p>users: {{ user.handle }}</p>
+      <div v-for="tag in user.tags" v-bind:key="tag.id">
+        <p>{{ tag.name }}</p>
+      </div>
       <router-link v-bind:to="`/users/${user.id}`">view profile</router-link>
     </div>
     <br />

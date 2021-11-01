@@ -35,6 +35,7 @@ export default {
         localStorage.setItem("jwt", response.data.jwt);
         localStorage.setItem("user_id", response.data.user_id);
         this.$router.push(`/users/${response.data.user_id}`);
+        this.$router.push(`/users/${this.user}/edit`);
       });
     },
   },

@@ -3,17 +3,23 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/signup">Signup</router-link>
-      |
-      <router-link to="/login">Login</router-link>
-      |
-      <router-link to="/logout">Logout</router-link>
-      |
+      <span v-if="!isLoggedIn()">
+        <router-link to="/login">Login</router-link>
+        |
+      </span>
+      <span v-if="isLoggedIn()">
+        <router-link to="/logout">Logout</router-link>
+        |
+      </span>
+      <span class="cta" v-if="!isLoggedIn()">
+        <router-link to="/signup">Signup</router-link>
+        |
+      </span>
       <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
       |
       <router-link to="/games">all games</router-link>
     </div>
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
