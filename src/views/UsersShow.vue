@@ -2,10 +2,7 @@
   <div class="users-show">
     <span v-if="verifyUser()">
       <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link>
-      |
     </span>
-
-    <router-link to="/games">Back to all games</router-link>
     <br />
     <h1>{{ user.handle }}</h1>
     <a :href="`${user.stream_url}`" target="_blank">
@@ -17,7 +14,7 @@
     <!-- <div v-for="game in user.games" v-bind:key="game.id"> -->
     <p>game of choice: {{ user.game.title }}</p>
     <br />
-    <router-link to="/games/"><img :src="user.game.image_url" /></router-link>
+    <router-link :to="`/games/${user.game.id}`"><img :src="user.game.image_url" /></router-link>
     <!-- </div> -->
     <div v-for="tag in user.tags" v-bind:key="tag.id">
       <p>{{ tag.name }}</p>

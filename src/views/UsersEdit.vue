@@ -5,25 +5,33 @@
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
+      <span>user: {{ user }}</span>
+      <br />
       <label>handle:</label>
       <input type="text" v-model="user.handle" />
+      <br />
       <label>image:</label>
       <input type="text" v-model="user.image_url" />
+      <br />
       <label>bio</label>
       <input type="text" v-model="user.bio" />
+      <br />
       <label>stream url</label>
       <input type="text" v-model="user.stream_url" />
-      <label>game</label>
-      <input type="text" v-model="user.game_id" />
+      <br />
+      <select v-model="user.game_id">
+        <option disabled value="">Please select game</option>
+        <option v-for="game in games" :key="game.id" :value="game.id">{{ game.title }}</option>
+      </select>
+      <br />
       <label>tags</label>
       <div v-for="tag in tags" v-bind:key="tag.id">
-        <label for="tag.name">{{ tag.name }}</label>
+        <label :for="tag.name">{{ tag.name }}</label>
         <input type="checkbox" :id="tag.id" :value="tag.id" v-model="selectedTagIds" />
-
         <br />
       </div>
       <span>Checked tags: {{ selectedTagIds }}</span>
-      <span>user: {{ user }}</span>
+
       <input type="submit" value="Update" />
     </form>
   </div>
@@ -42,14 +50,14 @@ export default {
   },
   created: function () {
     axios.get("/users/" + this.$route.params.id).then((response) => {
-      console.log("users show", response);
+      console.log("users show", response.data);
       this.user = response.data;
+      this.selectedTagIds = this.user.tags.map((tag) => tag.id);
+      console.log(this.selectedTagIds);
     });
     axios.get("/tags/").then((response) => {
       console.log("tags index", response.data);
       this.tags = response.data;
-      this.selectedTagIds = this.user.tags.map((tag) => tag.id);
-      console.log(this.selectedTagIds);
     });
     axios.get("/games/").then((response) => {
       console.log("games index", response.data);
