@@ -11,11 +11,8 @@
     <br />
     <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
     <p>bio:{{ user.bio }}</p>
-    <!-- <div v-for="game in user.games" v-bind:key="game.id"> -->
     <p>game of choice: {{ user.game.title }}</p>
-    <br />
     <router-link :to="`/games/${user.game.id}`"><img :src="user.game.image_url" /></router-link>
-    <!-- </div> -->
     <div v-for="tag in user.tags" v-bind:key="tag.id">
       <p>{{ tag.name }}</p>
     </div>
@@ -27,7 +24,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      user: {},
+      user: { game: { title: "" } },
     };
   },
   created: function () {

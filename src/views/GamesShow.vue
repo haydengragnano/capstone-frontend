@@ -1,9 +1,12 @@
 <template>
   <div class="games-show">
     <input type="text" v-model="tagSearch" />
+    <!-- <div v-for="tag in tags" v-bind:key="tag.id">
+      <input type="checkbox" :id="tag.id" :value="tag.name" v-model="tagSearch" />
+      {{ tag.name }}
+    </div> -->
     <h2>{{ game.title }}</h2>
     <img v-bind:src="game.image_url" v-bind:alt="game.title" />
-    <p>title: {{ game.title }}</p>
     <div v-for="user in filterBy(game.users, tagSearch, 'tags')" v-bind:key="user.id">
       <h1>{{ user.handle }}</h1>
       <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
@@ -27,12 +30,17 @@ export default {
     return {
       game: {},
       tagSearch: "",
+      tags: [],
     };
   },
   created: function () {
     axios.get("/games/" + this.$route.params.id).then((response) => {
       console.log("games show", response);
       this.game = response.data;
+    });
+    axios.get("/tags/").then((response) => {
+      console.log("tags index", response.data);
+      this.tags = response.data;
     });
   },
   methods: {},

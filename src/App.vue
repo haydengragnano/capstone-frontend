@@ -15,9 +15,11 @@
         <router-link to="/signup">Signup</router-link>
         |
       </span>
-      <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
-      |
-      <router-link to="/games">all games</router-link>
+      <span v-if="isLoggedIn()">
+        <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
+        |
+      </span>
+      <router-link to="/games">All Games</router-link>
     </div>
     <router-view :key="$route.fullPath" />
   </div>

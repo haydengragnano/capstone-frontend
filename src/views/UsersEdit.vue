@@ -5,35 +5,39 @@
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <span>user: {{ user }}</span>
+      <!-- <span>user: {{ user }}</span> -->
       <br />
-      <label>handle:</label>
+      <label>Handle:</label>
       <input type="text" v-model="user.handle" />
       <br />
-      <label>image:</label>
+      <label>Image:</label>
       <input type="text" v-model="user.image_url" />
       <br />
-      <label>bio</label>
-      <input type="text" v-model="user.bio" />
+      <label>Bio:</label>
+      <input type="text" v-model="user.bio" placeholder="ex:discord info" />
       <br />
-      <label>stream url</label>
-      <input type="text" v-model="user.stream_url" />
+      <label>Stream url:</label>
+      <input type="text" v-model="user.stream_url" placeholder="Website url" />
       <br />
+      <label>Game of choice:</label>
       <select v-model="user.game_id">
         <option disabled value="">Please select game</option>
         <option v-for="game in games" :key="game.id" :value="game.id">{{ game.title }}</option>
       </select>
       <br />
-      <label>tags</label>
+
+      <h3>tags:</h3>
       <div v-for="tag in tags" v-bind:key="tag.id">
         <label :for="tag.name">{{ tag.name }}</label>
         <input type="checkbox" :id="tag.id" :value="tag.id" v-model="selectedTagIds" />
         <br />
       </div>
-      <span>Checked tags: {{ selectedTagIds }}</span>
-
+      <!-- <span>Checked tags: {{ selectedTagIds }}</span> -->
+      <br />
       <input type="submit" value="Update" />
+      <br />
     </form>
+    <button v-on:click="destroyUser()">Delete</button>
   </div>
 </template>
 
@@ -46,6 +50,7 @@ export default {
       errors: [],
       tags: [],
       selectedTagIds: [],
+      games: "",
     };
   },
   created: function () {
@@ -71,13 +76,19 @@ export default {
       axios
         .patch("/users/" + this.user.id, editUserParams)
         .then((response) => {
-          console.log("users update", response);
+          console.log("users update", response.data);
           this.$router.push(`/users/${this.user.id}`);
         })
         .catch((error) => {
           console.log("users update error", error.response);
           this.errors = error.response.data.errors;
         });
+    },
+    destroyUser: function () {
+      axios.delete("/users/" + localStorage.getItem("user_id")).then((response) => {
+        console.log("users destroy", response);
+        this.$router.push("/login");
+      });
     },
   },
 };
