@@ -5,7 +5,6 @@
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <!-- <span>user: {{ user }}</span> -->
       <br />
       <label>Handle:</label>
       <input type="text" v-model="user.handle" />
@@ -32,7 +31,6 @@
         <input type="checkbox" :id="tag.id" :value="tag.id" v-model="selectedTagIds" />
         <br />
       </div>
-      <!-- <span>Checked tags: {{ selectedTagIds }}</span> -->
       <br />
       <input type="submit" value="Update" />
       <br />

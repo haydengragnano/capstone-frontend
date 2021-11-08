@@ -5,7 +5,7 @@
       <h2>{{ game.name }}</h2>
       <img v-bind:src="game.image_url" v-bind:alt="game.title" />
       <p>Name: {{ game.title }}</p>
-      <router-link v-bind:to="`/games/${game.id}`">More details</router-link>
+      <router-link v-bind:to="`/games/${game.id}`">Veiw Gamers</router-link>
     </div>
   </div>
 </template>
