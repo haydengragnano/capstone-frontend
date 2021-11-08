@@ -1,6 +1,18 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <h3>
+      MyStream is an application where you can network yourself and get in contact with other content creators to create
+      life long friends and a supportive community.
+    </h3>
+    <h4>
+      feel free to reachout with one another and find a time to load your streams up together and introduce each of your
+      communites to for more exposure and to give viewers a fun watching experience!!
+    </h4>
+    <img
+      src="https://images.unsplash.com/photo-1618193139062-2c5bf4f935b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+      alt="gamer"
+    />
   </div>
 </template>
 
@@ -10,7 +22,7 @@
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Welcome to MyStream! ",
     };
   },
   created: function () {},

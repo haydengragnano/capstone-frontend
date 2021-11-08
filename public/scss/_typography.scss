@@ -1,0 +1,248 @@
+/*	1.	Typography
+-------------------------------------------------------------------*/
+
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  color: #626262;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+}
+/* Headings 
+------------------------------------
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+h1 {
+  font-size: 44px;
+  line-height: 55px;
+  letter-spacing: -0.08px;
+}
+h2 {
+  font-size: 31px;
+  line-height: 40px;
+}
+h3 {
+  font-size: 27px;
+  line-height: 35px;
+}
+h4 {
+  font-size: 22px;
+  line-height: 31.88px;
+}
+h5 {
+  font-size: 18px;
+  line-height: 25.88px;
+}
+h3 small,
+h4 small,
+h5 small {
+  font-weight: 300;
+}
+h1.block,
+h2.block,
+h3.block,
+h4.block,
+h5.block,
+h6.block {
+  padding-bottom: 10px;
+}
+/* Lins and Others
+------------------------------------
+*/
+a {
+  text-shadow: none !important;
+  color: #584b8d;
+  transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+}
+a:focus,
+a:hover,
+a:active {
+  color: #6d5cae;
+}
+a,
+a:focus,
+a:hover,
+a:active {
+  outline: 0 !important;
+  text-decoration: none;
+}
+a[ng-click] {
+  cursor: pointer;
+}
+br {
+  line-height: normal;
+  clear: both;
+}
+code {
+  color: #c64643;
+  background-color: #f0f0f0;
+}
+code:hover {
+  background-color: #fddddd;
+}
+p {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  line-height: 22px;
+  margin: 0px 0px 10px 0px;
+  font-style: normal;
+  white-space: normal;
+}
+small,
+.small {
+  line-height: 18px;
+  font-size: 85%;
+}
+label.inline {
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  font-size: 13px;
+}
+ul,
+ol {
+  margin-bottom: 10px;
+}
+ul > li,
+ol > li {
+  padding-left: 3px;
+  line-height: 24px;
+}
+ul.lg-icon > li,
+ol.lg-icon > li {
+  font-size: 21px;
+}
+ul.lg-icon > li span,
+ol.lg-icon > li span {
+  font-size: 14px;
+}
+ul.no-style,
+ol.no-style {
+  list-style: none;
+  padding-left: 5px;
+}
+ul.checked_list, ol.checked_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		padding-left:30px;
+		position:relative;
+		&:after {
+			width: 25px;
+			display: inline-block;
+			text-align: left;
+			color: rgba(134, 158, 158,.8);
+			font: normal normal normal 14px/1 FontAwesome;
+			content: "\f00c";
+			position:absolute;
+			left:3px;
+			top:6px;
+		}
+		&:before {
+			content:'';
+			position:absolute;
+			left:0;
+			top:2px;
+			width:20px;
+			height:20px;
+			background:rgba(134, 158, 158,.1);;
+			border-radius:3px;
+		}
+	}
+	&.feature-list {
+		margin-bottom:30px;
+		columns:2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		&.three_cols {
+			columns:3;
+			-webkit-columns: 3;
+			-moz-columns: 3;
+		}
+		@media (max-width: 767px) {
+			columns:1;
+			-webkit-columns: 1;
+			-moz-columns: 1;
+		}
+	}
+}
+address {
+	margin-bottom: 0px;
+	a {
+		color: #626262;
+	}
+} 
+blockquote {
+	padding:20px;
+	background-color:rgba(134, 158, 158, 0.05);
+	border-left: 6px solid rgba(134, 158, 158, 0.2);
+	position:relative;
+	padding-left:100px;
+	margin-bottom:30px;
+	&:before {
+		content: "\f10d";
+		color:rgba(134, 158, 158, 0.3);
+		font:normal normal normal 14px/1 FontAwesome;
+		font-size: 50px;
+		line-height: 100px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100px;
+		height: 100px;
+		margin-top: 0;
+		margin-left: 0px;
+		display: inline-block;
+		font-style: italic;
+		text-align:center;
+	}
+	p {
+	  font-size: 16px;
+	}
+	&.pull-right {
+		padding-right: 100px;
+		border-right: 6px solid rgba(134, 158, 158, 0.2);
+		border-left:none;
+		text-align:right;
+		&:before {
+			left:auto;
+			right:0;
+		}
+	}
+}
+
+hr {
+	border-color: #e6e6e6;
+	&.double {
+		border-width: 2px;
+	}
+	&.dotted {
+		border-style: dotted none none;
+	}
+}

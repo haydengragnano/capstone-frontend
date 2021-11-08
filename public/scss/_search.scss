@@ -1,0 +1,197 @@
+/*	4.	Search Form
+-------------------------------------------------------------------*/
+
+.home-search {
+	margin-top:-15px;
+}
+.search-form.main {
+	min-height: 620px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0;
+	background-image: url(../img/demo/banner1.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+.search-form.main:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: url(../img/mask_grey.png) no-repeat center center;
+	background-size: cover;
+	z-index:1;
+}
+.search-form.main>.container, .search-form>.container-fluid {
+	z-index:1;
+	position:relative;
+}
+@media (max-width: 991px) {
+	.search-form.main {
+		padding-top:50px;
+		padding-bottom:50px;
+		height:auto;
+		min-height:inherit;
+		display:block;
+	}
+}
+.search-form.main .card {
+	border-radius: 3px;
+	border:none;
+	padding: 30px 30px 15px 30px;
+	background: rgba(0,0,0,.15);
+	box-shadow: none;
+}
+.search-form .heading {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.search-form .heading h2 {
+	font-size: 42px;
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: #FFF;
+}
+@media (max-width: 991px) {
+.search-form .heading h2 {
+	font-size:32px;
+}}
+.search-form .heading h3 {
+	margin-top: 0;
+	margin-bottom: 30px;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFF;
+}
+.search-form .search-video {
+	-o-object-fit: fill;
+	object-fit: fill;
+	position:absolute;
+	top: 0;
+	bottom:0;
+	left: 0;
+	right:0;
+	height:100%;
+	width:100%;
+	-ms-transform: none;
+	-moz-transform: none;
+	-webkit-transform: none;
+	transform: none;
+}
+.search-form .card {
+	border-radius: 0 0 3px 3px;
+	box-shadow:none;
+	margin-top:-15px;
+	padding: 15px 15px 0 15px;
+	background: #dfe3e6;
+}
+.search-form.main .form-control:focus {
+	border-color: transparent;
+}
+.search-form.main .input-group-btn>.btn, .search-form.main .input-group-btn>.btn:focus, .search-form.main .input-group-btn>.btn:active {
+	border-left:none;
+}
+.search-form.main .cta {
+	background: none;
+	color: #FFF;
+	font-size: 22px;
+	border-color: rgba(255,255,255,0.5);
+}
+.search-form .search-in {
+	text-align: center;
+}
+.search-in .radio-box {
+	display:inline-block;
+}
+.search-in label {
+	color: #FFF;
+	padding: 10px 15px;
+	border-radius: 3px;
+	position: relative;
+	transition: all 0.25s;
+	cursor:pointer;
+	position:relative;
+}
+.search-in input[type=radio]:checked+label {
+	background: rgba(255,255,255,0.1);
+}
+.search-in input[type=radio]:checked+label:before {
+	content:'';
+	position:absolute;
+	bottom:100%;
+	left:50%;
+	margin-left:-10px;
+	margin-top:5px;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid rgba(255,255,255,0.1);
+}
+.search-in input {
+	display:none;
+}
+.search-form.main.v2, .search-form.main.v5 {
+	min-height: 700px;
+	padding-top: 150px;
+}
+.search-form.main.v7 {
+	min-height: 700px;
+	padding-top: 150px;
+}
+.search-form.main.v3 {
+	height:100%;
+}
+.search-form.v2 .search-in, .search-form.v7 .search-in {
+	margin-top:40px;
+}
+.search-form.v3 .search-in {
+	margin-top:20px;
+}
+
+.search-form.v4 {
+	padding-top:1rem;
+	box-shadow:0px 0px 10px 0px rgba(0,0,0,0.1);
+	background-color:rgba(134, 158, 158, 0.4);
+}
+.search-form.main.v5 .heading {
+	text-align: left;
+}
+.search-form.main.v5 .form-control {
+	background-color: rgba(255,255,255,0.1);
+	border-color:rgba(255,255,255,0.1);
+	color:#fff;
+}
+.search-form.main.v5 .selectric {
+	background-color: rgba(255,255,255,0.1);
+	border-color: transparent;
+}
+.search-form.main.v5 .selectric .button {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.search-form.main.v5 .search-in .radio-box {
+	margin-bottom: 10px;
+}
+.search-form.main.v5 .search-in .radio-box label {
+	width:100%;
+	display:block;
+	font-size:1.25rem;
+}
+.search-form.main label {
+    color:rgba(255,255,255,0.5);
+	font-size:16px;
+}
+.search-form.main .radio label:before, .search-form.main .checkbox label:before {
+    background-color:rgba(255,255,255,0);
+    border-color:rgba(255,255,255,0.5);
+}
+.search-form.main .input-group-addon {
+    color:rgba(255,255,255,0.5);
+    background-color:rgba(255,255,255,0.1);
+    border-color:transparent;
+}

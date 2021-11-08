@@ -1,7 +1,48 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><span class="icon-uilove icon-uilove-realestate"></span></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#menu-content"
+            aria-controls="menu-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="menu-content">
+            <div class="container">
+              <router-link to="/">Home</router-link>
+              |
+              <span v-if="!isLoggedIn()">
+                <router-link to="/login">Login</router-link>
+                |
+              </span>
+              <span v-if="isLoggedIn()">
+                <router-link to="/logout">Logout</router-link>
+                |
+              </span>
+              <span v-if="!isLoggedIn()">
+                <router-link to="/signup">Signup</router-link>
+                |
+              </span>
+              <span v-if="isLoggedIn()">
+                <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
+                |
+              </span>
+              <router-link to="/games">All Games</router-link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <router-link to="/">Home</router-link>
       |
       <span v-if="!isLoggedIn()">
         <router-link to="/login">Login</router-link>
@@ -19,7 +60,7 @@
         <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
         |
       </span>
-      <router-link to="/games">All Games</router-link>
+      <router-link to="/games">All Games</router-link> -->
     </div>
     <router-view :key="$route.fullPath" />
   </div>

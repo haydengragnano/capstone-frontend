@@ -1,0 +1,120 @@
+/*	13.	Sidebar
+-------------------------------------------------------------------*/
+.col-sidebar {
+	z-index:1;
+}
+#sidebar {
+	will-change: min-height;
+	.sidebar_inner {
+		transform: translate(0, 0); /* For browsers don't support translate3d. */
+		transform: translate3d(0, 0, 0);
+		will-change: position, transform;
+	}
+	.card {
+		.card-header {
+			padding:0;
+			background:none;
+			font-weight:600;
+			font-size:16px;
+			border-bottom-color:rgba(134, 158, 158, 0.3);
+		}
+		.card-header .panel-title {
+			font-weight:600;
+			font-size:16px;
+		}
+		.card-body {
+			padding-left:0;
+			padding-right:0;
+			padding-bottom:0;
+		}
+	}
+	
+	/* Filters */
+
+	#filters {
+		margin-bottom:30px;
+	}
+	#filters .card {
+		padding:0;
+		box-shadow:none;
+		margin-bottom:0;
+		.collapse.show {
+			border-bottom:1px solid rgba(134, 158, 158, 0.3);
+		}
+		.card-header {
+			padding:0;
+			background:none;
+			font-weight:600;
+			font-size:16px;
+			border-bottom-color:rgba(134, 158, 158, 0.3);
+			a {
+				font-weight:600;
+				font-size:16px;
+				display:block;
+				color:rgba(134, 158, 158, 1);
+			}
+		}
+		.card-body {
+			padding-left:0;
+			padding-right:0;
+			padding-bottom:0;
+		}
+	}
+	@media (min-width: 768px) {
+		&.sidebar-left {
+			.sidebar_inner {
+				padding-right: 30px;
+				border-right: 1px solid #eee;
+			}
+		}
+		&.sidebar-right {
+			.sidebar_inner {
+				padding-left: 30px;
+				border-left: 1px solid #eee;
+			}
+		}
+	}
+}
+
+
+/* Sidr CSS */
+
+.sidr {
+	@media (max-width: 767px) {
+		display: block;
+		position: fixed;
+		top: 0;
+		height: 100%;
+		z-index: 999999;
+		width: 260px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background: #fff;
+		color: #333;
+		box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05);
+		padding: 20px;
+		&.right {
+		  left: auto;
+		  right: -260px;
+		}
+		&.sidr.left {
+		  left: -260px;
+		  right: auto;
+		}
+		&#sidebar {
+			.sidebar_inner {
+				padding-left: 0;
+				padding-right: 20px;
+				margin-right: -20px;
+				border-left: 0;
+				border-right: 0;
+				padding-bottom: 50px;
+				height: 100%;
+				overflow: auto;
+			}
+		}
+	}
+}
+.sidr-open .btn.close-panel {
+	display:block;
+}

@@ -1,0 +1,150 @@
+/*	8.	Buttons
+-------------------------------------------------------------------*/
+
+.btn, .btn:hover, .btn:focus, .btn:active, .btn:active:hover {
+	outline: none;
+	text-decoration: none;
+	border-radius: 2px;
+	font-weight: bold;
+	cursor:pointer;
+	transition: all 0.25s;
+}
+.btn-xlg {
+	padding:20px 40px;
+	font-size:20px;
+}
+.btn-link, .btn-link:focus, .btn-link:hover, .btn-link:active, .btn-link:active:hover, .btn-link:active:focus {
+	color: rgba(134, 158, 158, 1);
+	background-color: rgba(134, 158, 158, 0.1);
+}
+.btn-white, .btn-white:focus, .btn-white:hover, .btn-white:active, .btn-white:active:hover, .btn-white:active:focus {
+	background-color: #fff;
+	border-color:rgba(134, 158, 158, 0.4);
+}
+.btn-primary, .btn-primary:focus, .btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus {
+	background-color: #ffce40;
+	border-color: #ffce40;
+	color: #563d7c;
+}
+.btn-light {
+	background-color: #eff3f6;
+	background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+	background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+.btn-inverse, .btn-inverse:focus, .btn-inverse:hover, .btn-inverse:active, .btn-inverse:active:hover, .btn-inverse:active:focus {
+	background-color: #563d7c;
+	border-color: #563d7c;
+	color: #fff;
+}
+.btn-social {
+	text-align: left;
+	margin-bottom: 10px;
+}
+.btn-social .icon {
+	width: 30px;
+	border-right: 1px solid rgba(255,255,255,.3);
+	margin-right: 10px;
+}
+.btn-facebook, .btn-facebook:focus, .btn-facebook:hover, .btn-facebook:active, .btn-facebook:active:hover, .btn-facebook:active:focus {
+	background-color: #4a6bb2;
+	border-color: #4a6bb2;
+	color: #FFF;
+}
+.btn-google, .btn-google:focus, .btn-google:hover, .btn-google:active, .btn-google:active:hover, .btn-google:active:focus {
+    background-color: #ffffff;
+    border-color: #cccccc;
+	color: #333333;
+}
+.btn-twitter, .btn-twitter:focus, .btn-twitter:hover, .btn-twitter:active, .btn-twitter:active:hover, .btn-twitter:active:focus {
+	border-color: #1da1f2;
+	background-color: #1da1f2;
+	color: #FFF;
+}
+.btn-return {
+	display:inline-block;
+    margin-right: 15px;
+    color: #666;
+    font-size: 28px;
+	width:60px;
+	padding-top:15px;
+	padding-bottom:15px;
+	text-align:center;
+    background: rgba(134, 158, 158,0.15);
+    border-radius: 3px;
+    font-weight: bold;
+	float:left;
+}
+.btn-return:focus, .btn-return:hover, .btn-return:active, .btn-return:active:hover, .btn-return:active:focus {
+    background: rgba(134, 158, 158,0.3);
+}
+.btn-upload {
+	position: relative;
+}
+.btn-upload input {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+.btn-circle, .btn-circle:hover, .btn-circle:active, .btn-circle:focus {
+	height: 34px;
+    width: 34px;
+    line-height: 34px;
+    padding: 0;
+    border-radius: 50%;
+}
+.btn#to-top {
+	width: 52px;
+    height: 52px;
+	position:fixed;
+	right: 50px;
+    bottom: 50px;
+	visibility:hidden;
+	opacity:0;
+	transition: all 0.2s;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.btn.close-panel {
+	position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+	display:none;
+}
+
+
+.remove-item {
+	font-size: 14px;
+    margin-top: 15px;
+    display: block;
+    font-weight: 600;
+    color: rgba(134, 158, 158, 1);
+}
+.read-more {
+	font-size:14px;
+    margin-top: 15px;
+	font-weight:bold;
+    display: block;
+}
+.item-lg .read-more {
+	font-size:18px;
+    margin-top: 30px;
+}
+
+/* Mobile Filter */
+
+.mobile-filter {
+	display:none;
+	position:fixed;
+	right:20px;
+	bottom:20px;
+	z-index:999;
+	@media (max-width: 767px) {
+		display:block;
+	}
+}

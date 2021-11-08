@@ -1,0 +1,54 @@
+/*	15.	Demo
+-------------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'uilove-realestate';
+	src:  url('../lib/uilove/fonts/uilove-realestate.eot?gstvc');
+	src:  url('../lib/uilove/fonts/uilove-realestate.eot?gstvc#iefix') format('embedded-opentype'),
+	url('../lib/uilove/fonts/uilove-realestate.ttf?gstvc') format('truetype'),
+	url('../lib/uilove/fonts/uilove-realestate.woff?gstvc') format('woff'),
+	url('../lib/uilove/fonts/uilove-realestate.svg?gstvc#uilove-realestate') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-uilove-realestate {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'uilove-realestate' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	
+	/* Enable Ligatures ================ */
+	letter-spacing: 0;
+	-webkit-font-feature-settings: "liga";
+	-moz-font-feature-settings: "liga=1";
+	-moz-font-feature-settings: "liga";
+	-ms-font-feature-settings: "liga" 1;
+	font-feature-settings: "liga";
+	-webkit-font-variant-ligatures: discretionary-ligatures;
+	font-variant-ligatures: discretionary-ligatures;
+	
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-uilove-realestate:before {
+	content: "\e900";
+}
+
+#menu .icon-uilove {
+	font-size: 46px;
+	color: #ffce40;
+}
+#menu.navbar-over .icon-uilove-realestate, #menu.navbar-over .icon-uilove {
+	font-size:78px;
+}
+#footer .icon-uilove {
+	color: #ffce40;
+    font-size: 60px;
+    text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+}

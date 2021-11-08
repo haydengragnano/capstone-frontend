@@ -1,0 +1,72 @@
+a, a:hover, a:active, a:focus, .item-actions a {
+  color: #555; }
+
+#menu {
+  background-color: #f5f5f5;
+  box-shadow: none;
+  border-bottom: 1px solid #eee; }
+  #menu.home {
+    background-color: #fff; }
+  #menu.absolute-top, #menu.navbar-over.absolute-top {
+    border-bottom: none; }
+  #menu.fixed-top, #menu.navbar-over.fixed-top {
+    background-color: #f5f5f5; }
+  #menu.absolute-top .nav-item .nav-link {
+    color: #FFF; }
+  #menu .navbar-toggler {
+    background-color: #3b8ced; }
+  #menu .nav-item .nav-link {
+    color: #666; }
+  #menu .nav-item:hover .nav-link {
+    background-color: #3b8ced;
+    color: #fff; }
+  #menu .icon-uilove {
+    color: #3b8ced; }
+  #menu .nav-btn > span {
+    color: #3b8ced;
+    border: 1px solid #3b8ced; }
+  #menu .nav-item:hover .nav-btn > span {
+    background-color: #3b8ced;
+    color: #FFF; }
+
+#footer .icon-uilove {
+  color: #3b8ced; }
+
+.search-form .card {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee; }
+
+.btn-primary, .btn-primary:focus, .btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus {
+  background-color: #3b8ced;
+  border-color: #3b8ced;
+  color: #fff !important; }
+
+.btn-inverse, .btn-inverse:focus, .btn-inverse:hover, .btn-inverse:active, .btn-inverse:active:hover, .btn-inverse:active:focus {
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+  color: #3b8ced; }
+
+.nav-tabs > li > .nav-link.active, .nav-tabs > li > .nav-link.active:focus, .nav-tabs > li > .nav-link.active:hover {
+  color: #3b8ced; }
+
+.nav-tabs.tab-lg > li > a.nav-link.active {
+  border-top-color: #3b8ced;
+  font-weight: bold; }
+
+.item-listing .item .item-badges .item-badge-left {
+  background-color: rgba(74, 74, 76, 0.7);
+  font-weight: bold; }
+
+.pricing-column.popular ul li.title {
+  background-color: #3b8ced;
+  font-weight: bold; }
+
+.feature-box .content-box .icon {
+  color: #3b8ced; }
+
+.feature-box .content-box .icon.circle {
+  background-color: #3b8ced;
+  color: #fff; }
+
+/*# sourceMappingURL=blue.css.map */
