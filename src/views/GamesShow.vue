@@ -17,7 +17,6 @@
                             <option v-for="tag in tags" v-bind:key="tag.id">{{ tag.name }}</option>
                           </select>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-block btn-primary">Search</button>
                       </form>
                     </div>
                   </div>

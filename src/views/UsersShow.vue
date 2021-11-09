@@ -15,10 +15,11 @@
                         v-bind:alt="user.handle"
                       />
                     </div>
-                    <h3 class="subheadline">
-                      <h1>{{ user.handle }}</h1>
-                    </h3>
+
+                    <h1>{{ user.handle }}</h1>
+
                     <span v-if="verifyUser()">
+                      <h3 class="subheadline"></h3>
                       <router-link
                         v-bind:to="`/users/${user.id}/edit`"
                         class="btn btn-lg btn-primary btn-block"

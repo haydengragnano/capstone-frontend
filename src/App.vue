@@ -3,7 +3,9 @@
     <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><span class="icon-uilove icon-uilove-realestate"></span></a>
+          <a class="navbar-brand" href="index.html">
+            <span><img src="/img/controller (3).png" alt="" /></span>
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -28,7 +30,7 @@
                 <router-link to="/logout">Logout</router-link>
                 |
               </span>
-              <span v-if="!isLoggedIn()">
+              <span class="cta" v-if="!isLoggedIn()">
                 <router-link to="/signup">Signup</router-link>
                 |
               </span>
@@ -80,8 +82,9 @@
 }
 
 #nav a {
+  font-size: 3ch;
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 #nav a.router-link-exact-active {
