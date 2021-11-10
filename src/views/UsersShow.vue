@@ -26,7 +26,7 @@
                         data-toggle="modal"
                         data-target="#leadform"
                       >
-                        Edit User
+                        Edit Profile
                       </router-link>
                     </span>
                   </div>

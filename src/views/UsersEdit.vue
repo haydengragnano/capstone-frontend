@@ -42,27 +42,32 @@
                 </select>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-15">
-              <label>Bio:</label>
-              <textarea
-                type="text"
-                v-model="user.bio"
-                class="form-control form-control-lg text-editor"
-                placeholder="feel free to leave your discord info :)"
-              ></textarea>
-            </div>
-          </div>
 
-          <br />
-          <div class="col-md-6">
             <div class="form-group">
-              <label>TAGS</label>
-              <div v-for="tag in tags" v-bind:key="tag.id" class="form-control form-control-md">
-                <label :for="tag.name">{{ tag.name }}</label>
-                <input type="checkbox" :id="tag.id" :value="tag.id" v-model="selectedTagIds" />
-                <br />
+              <div class="col-md-12">
+                <label>Bio:</label>
+                <textarea
+                  cols="48"
+                  rows="7"
+                  type="text"
+                  v-model="user.bio"
+                  class="form-control form-control-lg text-editor"
+                  placeholder="feel free to leave your discord info :)"
+                ></textarea>
+              </div>
+            </div>
+
+            <br />
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>TAGS</label>
+                <div class="row">
+                  <div v-for="tag in tags" v-bind:key="tag.id" class="col-3">
+                    <input class="mr-2" type="checkbox" :id="tag.id" :value="tag.id" v-model="selectedTagIds" />
+                    <label :for="tag.name">{{ tag.name }}</label>
+                    <br />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -159,7 +164,7 @@ export default {
     destroyUser: function () {
       axios.delete("/users/" + localStorage.getItem("user_id")).then((response) => {
         console.log("users destroy", response);
-        this.$router.push("/login");
+        this.$router.push("/logout");
       });
     },
   },

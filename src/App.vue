@@ -3,9 +3,9 @@
     <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <p class="navbar-brand" href="index.html">
             <span><img src="/img/controller (3).png" alt="" /></span>
-          </a>
+          </p>
           <button
             class="navbar-toggler"
             type="button"
@@ -30,10 +30,10 @@
                 <router-link to="/logout">Logout</router-link>
                 |
               </span>
-              <span class="cta" v-if="!isLoggedIn()">
+              <!-- <span class="cta" v-if="!isLoggedIn()">
                 <router-link to="/signup">Signup</router-link>
                 |
-              </span>
+              </span> -->
               <span v-if="isLoggedIn()">
                 <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
                 |
@@ -69,21 +69,9 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
 #nav a {
-  font-size: 3ch;
-  font-weight: bold;
+  font-size: 2ch;
+
   color: #ffffff;
 }
 
