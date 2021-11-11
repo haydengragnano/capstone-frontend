@@ -43,26 +43,6 @@
           </div>
         </div>
       </nav>
-
-      <!-- <router-link to="/">Home</router-link>
-      |
-      <span v-if="!isLoggedIn()">
-        <router-link to="/login">Login</router-link>
-        |
-      </span>
-      <span v-if="isLoggedIn()">
-        <router-link to="/logout">Logout</router-link>
-        |
-      </span>
-      <span class="cta" v-if="!isLoggedIn()">
-        <router-link to="/signup">Signup</router-link>
-        |
-      </span>
-      <span v-if="isLoggedIn()">
-        <router-link :to="`/users/${getUserId()}`">My Profile</router-link>
-        |
-      </span>
-      <router-link to="/games">All Games</router-link> -->
     </div>
     <router-view :key="$route.fullPath" />
   </div>

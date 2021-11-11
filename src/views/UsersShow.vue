@@ -57,7 +57,7 @@
                         <div class="item-image">
                           <strong>{{ user.game.title }}</strong>
                           <router-link :to="`/games/${user.game.id}`">
-                            <img :src="user.game.image_url" />
+                            <img :src="user.game.image_url" class="img-fluid" />
                           </router-link>
                         </div>
                       </div>

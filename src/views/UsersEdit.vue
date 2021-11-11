@@ -52,7 +52,7 @@
                   type="text"
                   v-model="user.bio"
                   class="form-control form-control-lg text-editor"
-                  placeholder="feel free to leave your discord info :)"
+                  placeholder="feel free to leave your discord or any contact info you are comfortable with :)"
                 ></textarea>
               </div>
             </div>

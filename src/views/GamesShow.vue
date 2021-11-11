@@ -9,14 +9,17 @@
                 <div class="sidebar_inner">
                   <div class="card shadow agent-search">
                     <h3 class="subheadline mt0">Find Gamers</h3>
-                    <form>
-                      <div class="form-group">
-                        <label for="dealing">Tags</label>
-                        <select class="form-control" id="dealing" v-model="tagSearch">
-                          <option v-for="tag in tags" v-bind:key="tag.id">{{ tag.name }}</option>
-                        </select>
-                      </div>
-                    </form>
+
+                    <label class="typo__label">Tagging</label>
+                    <multiselect
+                      v-model="filteredTags"
+                      placeholder="Search or add a tag"
+                      label="name"
+                      track-by="name"
+                      :options="tags"
+                      :multiple="true"
+                      :taggable="true"
+                    ></multiselect>
                   </div>
                 </div>
               </div>
@@ -43,7 +46,7 @@
               </div>
               <div class="clearfix"></div>
               <div class="item-listing list">
-                <div class="item" v-for="user in filterBy(game.users, tagSearch, 'tags')" v-bind:key="user.id">
+                <div class="item" v-for="user in filteredUsersByTags" v-bind:key="user.id">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="item-image">
@@ -70,42 +73,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div v-for="tag in tags" v-bind:key="tag.id">
-      <input type="checkbox" :id="tag.id" :value="tag.name" v-model="tagSearch" />
-      {{ tag.name }}
-    </div> -->
-    <!-- <div>
-      <label class="typo__label">Tagging</label>
-      <multiselect
-        v-model="tagSearch"
-        tag-placeholder="Add this as new tag"
-        placeholder="Search or add a tag"
-        label="name"
-        track-by="name"
-        :options="options"
-        :multiple="true"
-        :taggable="true"
-        @tag="addTag"
-      ></multiselect>
-      {{ tagSearch }}
-      <pre class="language-json">{{ value }}</pre>
-    </div> -->
-    <!-- Search By Tag
-    <br />
-    <input type="text" v-model="tagSearch" />
-    <h1>{{ game.title }}</h1>
-    <img v-bind:src="game.image_url" v-bind:alt="game.title" />
-    <div v-for="user in filterBy(game.users, tagSearch, 'tags')" v-bind:key="user.id">
-      <h2>{{ user.handle }}</h2>
-      <img v-bind:src="user.image_url" v-bind:alt="user.handle" />
-      <div v-for="tag in user.tags" v-bind:key="tag.id">
-        <p>{{ tag.name }}</p>
-      </div>
-      <router-link v-bind:to="`/users/${user.id}`">view profile</router-link>
-    </div>
-    <br />
-    <router-link to="/games">Back to all games</router-link> -->
   </div>
 </template>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
@@ -113,20 +80,20 @@
 <script>
 import axios from "axios";
 import Vue2Filters from "vue2-filters";
-// import Multiselect from "vue-multiselect";
+import Multiselect from "vue-multiselect";
 
 export default {
   mixins: [Vue2Filters.mixin],
-  // components: {
-  //   Multiselect,
-  // },
+  components: {
+    Multiselect,
+  },
   data: function () {
     return {
       game: {},
       tagSearch: "",
       tags: [],
-      // value: [],
-      // options: [{ name: "Casual" }, { name: "Competitive" }, { name: "Ranked" }],
+      value: [],
+      filteredTags: [],
     };
   },
 
@@ -141,13 +108,17 @@ export default {
     });
   },
   methods: {
-    // addTag(newTag) {
-    //   const tag = {
-    //     name: newTag,
-    //   };
-    //   this.options.push(tag);
-    //   this.value.push(tag);
-    // },
+    getUserByTag: function (users, filteredTags) {
+      filteredTags.forEach((tag) => {
+        users = this.filterBy(users, tag.name);
+      });
+      return users;
+    },
+  },
+  computed: {
+    filteredUsersByTags() {
+      return this.getUserByTag(this.game.users, this.filteredTags);
+    },
   },
 };
 </script>
